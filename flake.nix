@@ -14,8 +14,6 @@
             packageOverrides = final: prev: {
               torchlibrosa = python3Packages.callPackage ./nix/torchlibrosa { };
               piano-transcription-inference = python3Packages.callPackage ./nix/piano-transcription-inference { };
-            } // super.lib.optionalAttrs super.stdenv.isDarwin {
-              pytorch = prev.pytorch-bin;
             };
           };
           pianotrans = super.callPackage ./nix/pianotrans { };
